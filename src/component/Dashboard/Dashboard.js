@@ -6,7 +6,7 @@ import Header from './Header'
 import List from './List'
 import { studentData } from '../data/index.js'
 
-const Dashboard = () => {
+const Dashboard = ({ setIsAuthenticated }) => {
   const [students, setStudents] = useState(studentData);
   const [selectedStudent, setSelectedStudent] = useState(null)
   const [adding, setAdding] = useState(false)
@@ -44,6 +44,7 @@ const Dashboard = () => {
         <>
           <Header
             setAdding={setAdding}
+            setIsAuthenticated={setIsAuthenticated}
           />
           <List
             students={students}
